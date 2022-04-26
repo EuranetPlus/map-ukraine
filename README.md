@@ -1,24 +1,15 @@
-# create-svelte
+## About this project
 
-Everything you need to build a Svelte project, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/master/packages/create-svelte).
+This is the code repository for an interactive EuraNet map that displays refugee movements from Ukraine to neighbouring countries based on a data from UNHCR. The data is pulled from an UNHCR API and updated daily based on the latest counts.
 
-## Creating a project
+## Development
 
-If you're seeing this, you've probably already done this step. Congrats!
+To locally develop this map, please do the following steps:
 
-```bash
-# create a new project in the current directory
-npm init svelte@next
-
-# create a new project in my-app
-npm init svelte@next my-app
-```
-
-> Note: the `@next` is temporary
-
-## Developing
-
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
+1. Clone the repo: ``git clone https://github.com/EuranetPlus/map-ukraine.git``
+2. Open cloned folder: ``cd map-ukraine``
+3. Install all dependencies: ``npm install``
+4. Start a local development server:  
 
 ```bash
 npm run dev
@@ -27,14 +18,16 @@ npm run dev
 npm run dev -- --open
 ```
 
-## Building
+## Production
 
-To create a production version of your app:
+Before creating a production version of your app, please install an [adapter](https://kit.svelte.dev/docs#adapters) for your target environment. Usually this would be the static adapter provided by SvelteKit or any adapter suiting your platform (i.e. Vercel, Netlify, etc.). Please see more info here: https://kit.svelte.dev/docs#adapters
+
+To build the app for production, run
 
 ```bash
 npm run build
 ```
 
-You can preview the production build with `npm run preview`.
+This will create a static folder called __build__ in the root folder of the repository, which contains all the files necessary for deployment on a web server.
 
-> To deploy your app, you may need to install an [adapter](https://kit.svelte.dev/docs/adapters) for your target environment.
+> You can also preview the built app with `npm run preview`, regardless of whether you installed an adapter. This should _not_ be used to serve your app in production.
