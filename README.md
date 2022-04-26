@@ -23,13 +23,13 @@ To embed the map on any website as a responsive widget, please use the following
 All text elements on the map (e.g. country names, heading, subheading, source text, notes, etc.) are automatically translated into the 24 official EU languages using the Google Translate API by running an automated node script. The translations returned by Google are a good first approach, but manual edits of the text in different languages may be necessary. To do this, please go to the [language folder](https://github.com/EuranetPlus/map-ukraine/tree/main/static/languages) and edit the contents of the respective language file.  
 
 Example:  
-To change the text of the heading of the map in Hungarian, open the hu.json file and change the "heading" entry (text in "" behind the :). To do this, simply click on the pen symbol on the top right side of the file preview window where it says "Edit this file". ***Warning: Please make sure to always enclose the text elemets with "" and do not forget to add a comma after the entry. Otherwise the file will not be able to be read and the app may brake***
+To change the text of the heading of the map in Hungarian, open the [hu.json](https://github.com/EuranetPlus/map-ukraine/blob/main/static/languages/hu.json) file and change the "heading" entry (text in "" behind the :). To do this, simply click on the pen symbol on the top right side of the file preview window where it says "Edit this file". ***Warning: Please make sure to always enclose the text elemets with "" and do not forget to add a comma after the entry. Otherwise the file will not be able to be read and the app may brake***
 
 This is correct:  
 "heading": "Már több mint 5,2 millió menekült menekült el Ukrajnából",
 
-This is **not** correct (comma is missing):  
-"heading": "Már több mint 5,2 millió menekült menekült el Ukrajnából"
+This is **not** correct (comma is missing and no "" encloding the text):  
+"heading": Már több mint 5,2 millió menekült menekült el Ukrajnából
 
 After this, save the changes by entering a title for the commit, e.g. "Create hu.json" and press the green __Commit changes__ button.
 
