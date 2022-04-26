@@ -14,6 +14,21 @@ To embed the map on any website as a widget, please use the following responsive
 <iframe title="Euranet Map" aria-label="Map" id="euranet-map" src="https://euranet-map-ukraine.vercel.app/" scrolling="no"frameborder="0" style="width: 0; min-width: 100% !important; border: none;" height="624"></iframe><script type="text/javascript">window.addEventListener("message", e => { if ("https://euranet-map-ukraine.vercel.app" !== e.origin) return; let t = e.data; if (t.height) { document.getElementById("euranet-map").height = t.height + "px" } }, !1)</script>
 ```
 
+## Changing translations manually
+
+All text elements on the map (e.g. country names, heading, subheading, source text, notes, etc.) are automatically translated into the 24 official EU languages using the Google Translate API by running an automated node script. The translations returned by Google are a good first approach, but manual edits of the text in different languages may be necessary. To do this, please go to the [language folder](https://github.com/EuranetPlus/map-ukraine/tree/main/static/languages) and edit the contents of the respective language file.  
+
+Example:  
+To change the text of the heading of the map in Hungarian, open the hu.json file and change the "heading" entry (text in "" behind the :). To do this, simply click on the pen symbol on the top right side of the file preview window where it says "Edit this file". ***Warning: Please make sure to always enclose the text elemets with "" and do not forget to add a comma after the entry. Otherwise the file will not be able to be read and the app may brake***
+
+This is correct:  
+"heading": "Már több mint 5,2 millió menekült menekült el Ukrajnából",
+
+This is **not** correct (comma is missing):  
+"heading": "Már több mint 5,2 millió menekült menekült el Ukrajnából"
+
+After this, save the changes by entering a title for the commit, e.g. "Create hu.json" and press the green __Commit changes__ button.
+
 
 
 ## Development
