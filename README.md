@@ -8,7 +8,7 @@ The map is hosted on EuranetPlus' Vercel account and can be viewed here: https:/
 
 ## Embedding the map
 
-To embed the map on any website as a widget, please use the following responsive iframe code:
+To embed the map on any website as a responsive widget, please use the following iframe code:
 
 ```bash
 <iframe title="Euranet Map" aria-label="Map" id="euranet-map" src="https://euranet-map-ukraine.vercel.app/" scrolling="no"frameborder="0" style="width: 0; min-width: 100% !important; border: none;" height="624"></iframe><script type="text/javascript">window.addEventListener("message", e => { if ("https://euranet-map-ukraine.vercel.app" !== e.origin) return; let t = e.data; if (t.height) { document.getElementById("euranet-map").height = t.height + "px" } }, !1)</script>
