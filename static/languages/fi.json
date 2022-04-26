@@ -1,0 +1,14 @@
+{
+    "heading": "Yli 5,2 miljoonaa pakolaista on jo paennut Ukrainasta",
+    "subheading": "Tämä kartta päivitetään päivittäin UNHCR:n uusimmilla tiedoilla Ukrainasta naapurimaihin pakenevista pakolaisista 24. helmikuuta 2022 lähtien",
+    "legend1": "Schengen-maat",
+    "legend2": "Ei-Schengen-maat",
+    "tooltip1": "pakolaisia",
+    "tooltip2": "Osuus kaikista pakolaisista",
+    "textUpdate": "Viimeksi päivitetty",
+    "textSourceDescription": "Lähde",
+    "textSource": "Yhdistyneiden kansakuntien pakolaisasiain päävaltuutettu (UNHCR)",
+    "textNoteDescription": "Huomautus",
+    "textNote": "Oikeus liikkua vapaasti Schengen-alueella tarkoittaa, että Euroopan unionin sisällä on hyvin vähän rajatarkastuksia. Ukrainaa rajaavien Schengen-maiden (Unkari, Puola, Slovakia) saapumistiedot edustavat siis vain rajanylityksiä kyseiseen maahan, mutta UNHCR arvioi, että suuri määrä ihmisiä on muuttanut edelleen muihin maihin.",
+    "textDataAccess": "Käytä tietoja"
+}

@@ -1,0 +1,14 @@
+{
+    "heading": "Mehr als 5,2 Millionen Flüchtlinge sind bereits aus der Ukraine geflohen",
+    "subheading": "Diese Karte wird täglich mit den neuesten Daten des UNHCR zu Flüchtlingen aktualisiert, die seit dem 24. Februar 2022 aus der Ukraine in die Nachbarländer fliehen",
+    "legend1": "Schengen-Staaten",
+    "legend2": "Nicht-Schengen-Länder",
+    "tooltip1": "Flüchtlinge",
+    "tooltip2": "Anteil an allen Flüchtlingen",
+    "textUpdate": "Letzte Aktualisierung",
+    "textSourceDescription": "Quelle",
+    "textSource": "Hoher Flüchtlingskommissar der Vereinten Nationen (UNHCR)",
+    "textNoteDescription": "Notiz",
+    "textNote": "Das Recht, sich innerhalb des Schengen-Raums frei zu bewegen, bedeutet, dass es nur sehr wenige Grenzkontrollen innerhalb der Europäischen Union gibt. Die Daten der Ankünfte in Schengen-Staaten (Ungarn, Polen, Slowakei), die an die Ukraine grenzen, stellen daher nur Grenzübertritte in dieses Land dar, aber UNHCR schätzt, dass eine große Anzahl von Menschen in andere Länder weitergezogen ist.",
+    "textDataAccess": "Greifen Sie auf die Daten zu"
+}
