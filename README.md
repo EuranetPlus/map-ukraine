@@ -2,6 +2,9 @@
 
 This is the code repository for an interactive EuranetPlus map that displays refugee movements from Ukraine to neighbouring countries based on a data from UNHCR. The data is pulled from an [UNHCR API](https://data2.unhcr.org/en/situations/ukraine) and updated daily based on the latest counts.
 
+![_Users_alsino_Desktop_map-ukraine_preview_index html (1)](https://user-images.githubusercontent.com/104374044/165337413-67e72e8a-68b0-401a-9bf3-c5cfa3d69eb1.png)
+
+
 ## Live map
 
 The map is hosted on EuranetPlus' Vercel account and can be viewed here: https://euranet-map-ukraine.vercel.app/
