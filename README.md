@@ -7,7 +7,8 @@ This is the code repository for an interactive EuranetPlus map that displays ref
 
 ## Live map
 
-The map is hosted on EuranetPlus' Vercel account and can be viewed here: https://euranet-map-ukraine.vercel.app/
+The map is hosted on EuranetPlus' Vercel account and can be viewed here:  
+https://euranet-map-ukraine.vercel.app/
 
 ## Embedding the map
 
