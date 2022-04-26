@@ -25,11 +25,11 @@ All text elements on the map (e.g. country names, heading, subheading, source te
 Example:  
 To change the text of the heading of the map in Hungarian, open the [hu.json](https://github.com/EuranetPlus/map-ukraine/blob/main/static/languages/hu.json) file and change the "heading" entry (text in quotation marks, i.e. "" behind the :). To do this, simply click on the pen symbol on the top right side of the file preview window where it says "Edit this file". ***Warning: Please make sure to always enclose the text elemets with quotation marks and do not forget to add a comma after the entry. Otherwise the file will not be able to be read and the app may brake***
 
-This is correct:  
-"heading": "Már több mint 5,2 millió menekült menekült el Ukrajnából",
+This is **correct**:  
+``"heading": "Már több mint 5,2 millió menekült menekült el Ukrajnából",``
 
-This is **not** correct (comma is missing and no quotation marks, i.e. "" encloding the text):  
-"heading": Már több mint 5,2 millió menekült menekült el Ukrajnából
+This is **not correct** (comma is missing and no quotation marks, i.e. "" enclosing the text):  
+``"heading": Már több mint 5,2 millió menekült menekült el Ukrajnából``
 
 After this, save the changes by entering a title for the commit, e.g. "Create hu.json" and press the green __Commit changes__ button.
 
