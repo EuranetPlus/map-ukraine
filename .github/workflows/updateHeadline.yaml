@@ -1,4 +1,4 @@
-name: Get translations
+name: Update map headline with new data
 on:
   schedule:
     # every day at 12:15 CET, this is 10:15 in UTC
@@ -27,7 +27,7 @@ jobs:
         env:
           super_secret: ${{ secrets.API_KEY }}
       - run: npm install
-      - run: npm run translate
+      - run: npm run updateHeadline
       - run: git add .
       - run: git commit -m "Updated language files"
       - run: git push origin main
