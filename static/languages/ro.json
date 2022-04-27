@@ -1,14 +1,14 @@
 {
-    "heading": "Peste 5,2 milioane de refugiați au fugit deja din Ucraina",
-    "subheading": "Această hartă este actualizată zilnic cu cele mai recente date de la ICNUR privind refugiații care fug din Ucraina în țările vecine începând cu 24 februarie 2022",
-    "legend1": "Țările Schengen",
-    "legend2": "Țările non-Schengen",
-    "tooltip1": "refugiati",
-    "tooltip2": "Ponderea tuturor refugiaților",
-    "textUpdate": "Ultima actualizare",
-    "textSourceDescription": "Sursă",
-    "textSource": "Înaltul Comisar al Națiunilor Unite pentru Refugiați (UNHCR)",
-    "textNoteDescription": "Notă",
-    "textNote": "Dreptul de a circula liber în spațiul Schengen înseamnă că există foarte puține controale la frontieră în cadrul Uniunii Europene. Datele privind sosirile în țările Schengen (Ungaria, Polonia, Slovacia) care se învecinează cu Ucraina reprezintă așadar doar punctele de trecere a frontierei în acea țară, dar ICNUR estimează că un număr mare de persoane s-au mutat mai departe în alte țări.",
-    "textDataAccess": "Accesați datele"
+  "heading": "Peste 5,2 milioane de refugiați au fugit deja din Ucraina",
+  "subheading": "Această hartă este actualizată zilnic cu cele mai recente date de la ICNUR privind refugiații care fug din Ucraina în țările vecine începând cu 24 februarie 2022",
+  "legend1": "Țările Schengen",
+  "legend2": "Țările non-Schengen",
+  "tooltip1": "refugiati",
+  "tooltip2": "Ponderea tuturor refugiaților",
+  "textUpdate": "Ultima actualizare",
+  "textSourceDescription": "Sursă",
+  "textSource": "Înaltul Comisar al Națiunilor Unite pentru Refugiați (UNHCR)",
+  "textNoteDescription": "Notă",
+  "textNote": "Dreptul de a circula liber în spațiul Schengen înseamnă că există foarte puține controale la frontieră în cadrul Uniunii Europene. Datele privind sosirile în țările Schengen (Ungaria, Polonia, Slovacia) care se învecinează cu Ucraina reprezintă așadar doar punctele de trecere a frontierei în acea țară, dar ICNUR estimează că un număr mare de persoane s-au mutat mai departe în alte țări.",
+  "textDataAccess": "Accesați datele"
 }

@@ -1,14 +1,14 @@
 {
-    "heading": "Más de 5,2 millones de refugiados ya han huido de Ucrania",
-    "subheading": "Este mapa se actualiza diariamente con los últimos datos de ACNUR sobre refugiados que huyen de Ucrania a países vecinos desde el 24 de febrero de 2022.",
-    "legend1": "Países Schengen",
-    "legend2": "Países no Schengen",
-    "tooltip1": "refugiados",
-    "tooltip2": "Porcentaje de todos los refugiados",
-    "textUpdate": "Última actualización",
-    "textSourceDescription": "Fuente",
-    "textSource": "Alto Comisionado de las Naciones Unidas para los Refugiados (ACNUR)",
-    "textNoteDescription": "Nota",
-    "textNote": "El derecho a moverse libremente dentro del espacio Schengen significa que hay muy pocos controles fronterizos dentro de la Unión Europea. Los datos de llegadas a los países Schengen (Hungría, Polonia, Eslovaquia) fronterizos con Ucrania, por lo tanto, solo representan los cruces fronterizos hacia ese país, pero ACNUR estima que una gran cantidad de personas se han trasladado a otros países.",
-    "textDataAccess": "Accede a los datos"
+  "heading": "Más de 5,2 millones de refugiados ya han huido de Ucrania",
+  "subheading": "Este mapa se actualiza diariamente con los últimos datos de ACNUR sobre refugiados que huyen de Ucrania a países vecinos desde el 24 de febrero de 2022.",
+  "legend1": "Países Schengen",
+  "legend2": "Países no Schengen",
+  "tooltip1": "refugiados",
+  "tooltip2": "Porcentaje de todos los refugiados",
+  "textUpdate": "Última actualización",
+  "textSourceDescription": "Fuente",
+  "textSource": "Alto Comisionado de las Naciones Unidas para los Refugiados (ACNUR)",
+  "textNoteDescription": "Nota",
+  "textNote": "El derecho a moverse libremente dentro del espacio Schengen significa que hay muy pocos controles fronterizos dentro de la Unión Europea. Los datos de llegadas a los países Schengen (Hungría, Polonia, Eslovaquia) fronterizos con Ucrania, por lo tanto, solo representan los cruces fronterizos hacia ese país, pero ACNUR estima que una gran cantidad de personas se han trasladado a otros países.",
+  "textDataAccess": "Accede a los datos"
 }

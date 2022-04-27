@@ -1,14 +1,14 @@
 {
-    "heading": "Ukrainast on põgenenud juba üle 5,2 miljoni põgeniku",
-    "subheading": "Seda kaarti uuendatakse iga päev UNHCRi viimaste andmetega Ukrainast naaberriikidesse põgenevate põgenike kohta alates 24. veebruarist 2022.",
-    "legend1": "Schengeni riigid",
-    "legend2": "Mitte-Schengeni riigid",
-    "tooltip1": "pagulased",
-    "tooltip2": "Kõigi pagulaste osakaal",
-    "textUpdate": "Viimati värskendatud",
-    "textSourceDescription": "Allikas",
-    "textSource": "ÜRO pagulaste ülemvolinik (UNHCR)",
-    "textNoteDescription": "Märge",
-    "textNote": "Õigus Schengeni alal vabalt liikuda tähendab, et Euroopa Liidu piires on väga vähe piirikontrolli. Ukrainaga piirnevatesse Schengeni riikidesse (Ungari, Poola, Slovakkia) saabujate andmed kajastavad seega vaid piiriületusi sellesse riiki, kuid UNHCR hinnangul on suur hulk inimesi edasi kolinud teistesse riikidesse.",
-    "textDataAccess": "Juurdepääs andmetele"
+  "heading": "Ukrainast on põgenenud juba üle 5,2 miljoni põgeniku",
+  "subheading": "Seda kaarti uuendatakse iga päev UNHCRi viimaste andmetega Ukrainast naaberriikidesse põgenevate põgenike kohta alates 24. veebruarist 2022.",
+  "legend1": "Schengeni riigid",
+  "legend2": "Mitte-Schengeni riigid",
+  "tooltip1": "pagulased",
+  "tooltip2": "Kõigi pagulaste osakaal",
+  "textUpdate": "Viimati värskendatud",
+  "textSourceDescription": "Allikas",
+  "textSource": "ÜRO pagulaste ülemvolinik (UNHCR)",
+  "textNoteDescription": "Märge",
+  "textNote": "Õigus Schengeni alal vabalt liikuda tähendab, et Euroopa Liidu piires on väga vähe piirikontrolli. Ukrainaga piirnevatesse Schengeni riikidesse (Ungari, Poola, Slovakkia) saabujate andmed kajastavad seega vaid piiriületusi sellesse riiki, kuid UNHCR hinnangul on suur hulk inimesi edasi kolinud teistesse riikidesse.",
+  "textDataAccess": "Juurdepääs andmetele"
 }

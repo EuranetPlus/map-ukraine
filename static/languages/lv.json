@@ -1,14 +1,14 @@
 {
-    "heading": "No Ukrainas jau devušies vairāk nekā 5,2 miljoni bēgļu",
-    "subheading": "Šī karte katru dienu tiek atjaunināta ar jaunākajiem UNHCR datiem par bēgļiem, kas bēg no Ukrainas uz kaimiņvalstīm kopš 2022. gada 24. februāra.",
-    "legend1": "Šengenas valstis",
-    "legend2": "Valstis, kas nav Šengenas zonas valstis",
-    "tooltip1": "bēgļi",
-    "tooltip2": "Visu bēgļu daļa",
-    "textUpdate": "Pēdējoreiz atjaunots",
-    "textSourceDescription": "Avots",
-    "textSource": "Apvienoto Nāciju Organizācijas Augstais komisārs bēgļu jautājumos (UNHCR)",
-    "textNoteDescription": "Piezīme",
-    "textNote": "Tiesības brīvi pārvietoties Šengenas zonā nozīmē, ka Eiropas Savienībā ir ļoti maz robežkontroles. Tāpēc dati par ieceļotājiem Šengenas valstīs (Ungārija, Polija, Slovākija), kas robežojas ar Ukrainu, atspoguļo tikai robežas šķērsošanu šajā valstī, bet UNHCR lēš, ka liels skaits cilvēku ir pārcēlušies uz citām valstīm.",
-    "textDataAccess": "Piekļūstiet datiem"
+  "heading": "No Ukrainas jau devušies vairāk nekā 5,2 miljoni bēgļu",
+  "subheading": "Šī karte katru dienu tiek atjaunināta ar jaunākajiem UNHCR datiem par bēgļiem, kas bēg no Ukrainas uz kaimiņvalstīm kopš 2022. gada 24. februāra.",
+  "legend1": "Šengenas valstis",
+  "legend2": "Valstis, kas nav Šengenas zonas valstis",
+  "tooltip1": "bēgļi",
+  "tooltip2": "Visu bēgļu daļa",
+  "textUpdate": "Pēdējoreiz atjaunots",
+  "textSourceDescription": "Avots",
+  "textSource": "Apvienoto Nāciju Organizācijas Augstais komisārs bēgļu jautājumos (UNHCR)",
+  "textNoteDescription": "Piezīme",
+  "textNote": "Tiesības brīvi pārvietoties Šengenas zonā nozīmē, ka Eiropas Savienībā ir ļoti maz robežkontroles. Tāpēc dati par ieceļotājiem Šengenas valstīs (Ungārija, Polija, Slovākija), kas robežojas ar Ukrainu, atspoguļo tikai robežas šķērsošanu šajā valstī, bet UNHCR lēš, ka liels skaits cilvēku ir pārcēlušies uz citām valstīm.",
+  "textDataAccess": "Piekļūstiet datiem"
 }

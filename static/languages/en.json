@@ -1,14 +1,14 @@
 {
-    "heading": "More than 5.2 million refugees have already fled from Ukraine",
-    "subheading": "This map is updated daily with the latest data from UNHCR on refugees fleeing from Ukraine into neighbouring countries since 24 February 2022",
-    "legend1": "Schengen countries",
-    "legend2": "Non-Schengen countries",
-    "tooltip1": "refugees",
-    "tooltip2": "Share of all refugees",
-    "textUpdate": "Last updated",
-    "textSourceDescription": "Source",
-    "textSource": "United Nations High Commissioner for Refugees (UNHCR)",
-    "textNoteDescription": "Note",
-    "textNote": "The right to move freely within the Schengen area means there are very few border controls within the European Union. The data of arrivals in Schengen countries (Hungary, Poland, Slovakia) bordering Ukraine therefore only represents border crossings into that country, but UNHCR estimates that a large number of people have moved onwards to other countries.",
-    "textDataAccess": "Access the data"
+  "heading": "More than 5.2 million refugees have already fled from Ukraine",
+  "subheading": "This map is updated daily with the latest data from UNHCR on refugees fleeing from Ukraine into neighbouring countries since 24 February 2022",
+  "legend1": "Schengen countries",
+  "legend2": "Non-Schengen countries",
+  "tooltip1": "refugees",
+  "tooltip2": "Share of all refugees",
+  "textUpdate": "Last updated",
+  "textSourceDescription": "Source",
+  "textSource": "United Nations High Commissioner for Refugees (UNHCR)",
+  "textNoteDescription": "Note",
+  "textNote": "The right to move freely within the Schengen area means there are very few border controls within the European Union. The data of arrivals in Schengen countries (Hungary, Poland, Slovakia) bordering Ukraine therefore only represents border crossings into that country, but UNHCR estimates that a large number of people have moved onwards to other countries.",
+  "textDataAccess": "Access the data"
 }
