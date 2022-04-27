@@ -6,7 +6,7 @@ on:
   workflow_dispatch: {}
   push:
     paths:
-      - .github/workflows/translate.yml
+      - .github/workflows/updateHeadline.yml
 jobs:
   scheduled:
     runs-on: ubuntu-latest
@@ -29,5 +29,5 @@ jobs:
       - run: npm install
       - run: npm run updateHeadline
       - run: git add .
-      - run: git commit -m "Updated language files"
+      - run: git commit -m "Updated headlines in language json files"
       - run: git push origin main
