@@ -1,10 +1,6 @@
 {
   "heading": "Z Ukrajiny utieklo už viac ako 9,1 milióna utečencov",
-<<<<<<< HEAD
-  "subheading": "Táto mapa sa denne aktualizuje o najnovšie údaje UNHCR o utečencoch utekajúcich z Ukrajiny do susedných krajín od 24. februára 2022",
-=======
-  "subheading": "Táto mapa je denne aktualizovaná o najnovšie údaje UNHCR o utečencoch utekajúcich z Ukrajiny do susedných krajín od 24. februára 2022",
->>>>>>> 4c72521c7cd0f0b766b126bf641a0a8956509923
+  "subheading": "Táto mapa je denne aktualizovaná o najnovšie údaje UNHCR o hraničných priechodoch z Ukrajiny do susedných krajín od 24. februára 2022",
   "legend1": "krajiny schengenského priestoru",
   "legend2": "Krajiny mimo Schengenu",
   "tooltip1": "utečencov",
