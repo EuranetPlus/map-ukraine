@@ -77,12 +77,15 @@
 		let aggregateData =
 			'https://data2.unhcr.org/population/?widget_id=294522&sv_id=54&population_group=5460';
 
+		// Use heroku server to proxy CORS-request
+		let corsProxyUrl = 'https://floating-ocean-04956.herokuapp.com/';
+
 		// Load aggregate data
-		const resAggregate = await fetch(aggregateData)
+		const resAggregate = await fetch(`${corsProxyUrl}${aggregateData}`)
 			.then((response) => response.json())
 			.then((dataRaw) => {
 				let data = dataRaw.data;
-				// console.log(data);
+				// console.log('data', data);
 
 				// Force strings to numbers
 				data.forEach(function (d) {

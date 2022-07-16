@@ -1,14 +1,14 @@
 {
-  "heading": "Više od 7,7 milijuna izbjeglica već je pobjeglo iz Ukrajine",
-  "subheading": "Ova se karta svakodnevno ažurira najnovijim podacima UNHCR-a o izbjeglicama koje bježe iz Ukrajine u susjedne zemlje od 24. veljače 2022.",
+  "heading": "Iz Ukrajine je već pobjeglo više od 9,1 milijuna izbjeglica",
+  "subheading": "Ova se karta svakodnevno ažurira s najnovijim podacima UNHCR-a o izbjeglicama koje bježe iz Ukrajine u susjedne zemlje od 24. veljače 2022.",
   "legend1": "schengenske zemlje",
-  "legend2": "Zemlje koje nisu članice Schengena",
+  "legend2": "Neschengenske zemlje",
   "tooltip1": "izbjeglice",
   "tooltip2": "Udio svih izbjeglica",
-  "textUpdate": "Posljednje ažurirano",
+  "textUpdate": "Zadnje ažuriranje",
   "textSourceDescription": "Izvor",
   "textSource": "Visoki povjerenik Ujedinjenih naroda za izbjeglice (UNHCR)",
   "textNoteDescription": "Bilješka",
-  "textNote": "Pravo na slobodno kretanje unutar schengenskog prostora znači da postoji vrlo malo graničnih kontrola unutar Europske unije. Podaci o dolascima u zemlje Schengena (Mađarska, Poljska, Slovačka) koje graniče s Ukrajinom dakle predstavljaju samo granične prijelaze u tu zemlju, no UNHCR procjenjuje da je velik broj ljudi odselio u druge zemlje.",
-  "textDataAccess": "Pristup podacima"
+  "textNote": "Pravo na slobodno kretanje unutar schengenskog prostora znači da postoji vrlo malo graničnih kontrola unutar Europske unije. Podaci o dolascima u schengenske zemlje (Mađarska, Poljska, Slovačka) koje graniče s Ukrajinom stoga predstavljaju samo prelazak granice u tu zemlju, no UNHCR procjenjuje da je veliki broj ljudi krenuo dalje u druge zemlje.",
+  "textDataAccess": "Pristupite podacima"
 }

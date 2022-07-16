@@ -1,14 +1,14 @@
 {
-  "heading": "Iz Ukrajine je že pobegnilo več kot 7,7 milijona beguncev",
+  "heading": "Iz Ukrajine je zbežalo že več kot 9,1 milijona beguncev",
   "subheading": "Ta zemljevid se dnevno posodablja z najnovejšimi podatki UNHCR o beguncih, ki bežijo iz Ukrajine v sosednje države od 24. februarja 2022.",
-  "legend1": "schengenske države",
-  "legend2": "Države, ki niso schengenske",
+  "legend1": "Schengenske države",
+  "legend2": "Neschengenske države",
   "tooltip1": "begunci",
   "tooltip2": "Delež vseh beguncev",
   "textUpdate": "Zadnja posodobitev",
   "textSourceDescription": "Vir",
   "textSource": "Visoki komisar Združenih narodov za begunce (UNHCR)",
   "textNoteDescription": "Opomba",
-  "textNote": "Pravica do prostega gibanja znotraj schengenskega območja pomeni, da je znotraj Evropske unije zelo malo mejnih kontrol. Podatki o prihodih v schengenske države (Madžarska, Poljska, Slovaška), ki mejijo na Ukrajino, torej predstavljajo le mejne prehode v to državo, vendar UNHCR ocenjuje, da se je veliko ljudi preselilo naprej v druge države.",
+  "textNote": "Pravica do prostega gibanja znotraj schengenskega območja pomeni, da je znotraj Evropske unije zelo malo mejnih kontrol. Podatki o prihodih v schengenske države (Madžarska, Poljska, Slovaška), ki mejijo na Ukrajino, torej predstavljajo le prehode meje v to državo, vendar UNHCR ocenjuje, da se je veliko ljudi preselilo naprej v druge države.",
   "textDataAccess": "Dostop do podatkov"
 }
