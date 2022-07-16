@@ -8,6 +8,8 @@
 	import MapChoroplethAPI from '$lib/components/MapChoroplethAPI.svelte';
 	import Select from 'svelte-select';
 
+	import { dataUpdated } from '$lib/stores/shared';
+
 	let heading;
 	let subheading;
 	let tooltipLabel1;
@@ -32,12 +34,10 @@
 	}
 
 	$: dropdownLanguages = languageNameTranslations['en'];
-
 	// $: console.log($selectedLanguage.value);
 
 	onMount(async () => {
 		await getLanguage($selectedLanguage.value);
-		await getAggregateAPI();
 		// console.log('basePath', base);
 	});
 
@@ -72,33 +72,6 @@
 		// $selectedLanguage = event.detail.value;
 		getLanguage($selectedLanguage.value);
 	}
-
-	async function getAggregateAPI() {
-		let aggregateData =
-			'https://data2.unhcr.org/population/?widget_id=294522&sv_id=54&population_group=5460';
-
-		// Use heroku server to proxy CORS-request
-		let corsProxyUrl = 'https://floating-ocean-04956.herokuapp.com/';
-
-		// Load aggregate data
-		const resAggregate = await fetch(`${corsProxyUrl}${aggregateData}`)
-			.then((response) => response.json())
-			.then((dataRaw) => {
-				let data = dataRaw.data;
-				// console.log('data', data);
-
-				// Force strings to numbers
-				data.forEach(function (d) {
-					d['individuals'] = +d['individuals'];
-				});
-
-				data = data[0];
-
-				lastUpdate = data.date;
-				totalRefugees = data.individuals;
-			})
-			.catch((error) => console.error('error', error));
-	}
 </script>
 
 <div id="euranet-map" bind:clientHeight={$APP_HEIGHT}>
@@ -132,11 +105,11 @@
 			<MapChoroplethAPI {legend} {tooltip} />
 		</div>
 	</div>
-	{#if textUpdate && textSourceDescription && textSource && textDataAccess && lastUpdate}
+	{#if textUpdate && textSourceDescription && textSource && textDataAccess && $dataUpdated}
 		<div class="text-xs mt-2">
 			<div>
 				<span class="font-bold">{textUpdate}:</span>
-				{lastUpdate}, 12:00 CET
+				{$dataUpdated}, 12:00 CET
 			</div>
 			<div>
 				<span class="font-bold">{textSourceDescription}:</span>

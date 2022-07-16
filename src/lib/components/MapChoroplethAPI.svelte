@@ -21,6 +21,8 @@
 	import { formatThousands } from '$lib/utils/formatNumbers';
 	import { formatPercent } from '$lib/utils/formatNumbers';
 
+	import { dataUpdated } from '$lib/stores/shared';
+
 	// Make square dimensions i.e. 600x600 to fill all space
 	let width = 600;
 	let height = 600;
@@ -184,7 +186,7 @@
 
 				data = data[0];
 
-				lastUpdate = data.date;
+				$dataUpdated = data.date;
 				totalRefugees = data.individuals;
 			})
 			.catch((error) => console.error('error', error));
@@ -206,6 +208,7 @@
 		// console.log(csvTransformed);
 		// console.log(countriesAll);
 		$dataReady = true;
+		// test-commit
 	}
 
 	onMount(async () => {
