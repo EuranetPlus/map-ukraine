@@ -1,6 +1,10 @@
 {
   "heading": "Mer än 9,1 miljoner flyktingar har redan flytt från Ukraina",
+<<<<<<< HEAD
   "subheading": "Denna karta uppdateras dagligen med de senaste uppgifterna från UNHCR om flyktingar som flyr från Ukraina till grannländer sedan 24 februari 2022",
+=======
+  "subheading": "Denna karta uppdateras dagligen med de senaste uppgifterna från UNHCR om flyktingar som flyr från Ukraina till grannländerna sedan 24 februari 2022",
+>>>>>>> 4c72521c7cd0f0b766b126bf641a0a8956509923
   "legend1": "Schengenländerna",
   "legend2": "Icke-Schengenländer",
   "tooltip1": "flyktingar",

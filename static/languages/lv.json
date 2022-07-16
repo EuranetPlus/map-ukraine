@@ -1,6 +1,10 @@
 {
   "heading": "No Ukrainas jau ir aizbēguši vairāk nekā 9,1 miljons bēgļu",
+<<<<<<< HEAD
   "subheading": "Šī karte tiek atjaunināta katru dienu ar jaunākajiem UNHCR datiem par bēgļiem, kas bēg no Ukrainas uz kaimiņvalstīm kopš 2022. gada 24. februāra.",
+=======
+  "subheading": "Šī karte katru dienu tiek atjaunināta ar jaunākajiem UNHCR datiem par bēgļiem, kas bēg no Ukrainas uz kaimiņvalstīm kopš 2022. gada 24. februāra.",
+>>>>>>> 4c72521c7cd0f0b766b126bf641a0a8956509923
   "legend1": "Šengenas valstis",
   "legend2": "Valstis, kas nav Šengenas zonas valstis",
   "tooltip1": "bēgļi",
