@@ -146,7 +146,8 @@
 			'https://data2.unhcr.org/population/?widget_id=294522&sv_id=54&population_group=5460';
 
 		// Use heroku server to proxy CORS-request
-		let corsProxyUrl = 'https://floating-ocean-04956.herokuapp.com/';
+		// let corsProxyUrl = 'https://floating-ocean-04956.herokuapp.com/'; Expired!
+		let corsProxyUrl = 'https://floating-ocean-04956.fly.dev/';
 
 		// Load country data
 		const resCountry = await fetch(`${corsProxyUrl}${countryData}`)
