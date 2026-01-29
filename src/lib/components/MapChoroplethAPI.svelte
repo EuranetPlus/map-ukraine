@@ -12,7 +12,6 @@
 	import Scale from './Scale.svelte';
 	import Legend from './Legend.svelte';
 
-	import { extent } from 'd3-array';
 	import { min, max } from 'd3-array';
 
 	import { schemeBlues } from 'd3-scale-chromatic';
@@ -44,8 +43,7 @@
 
 	$: tooltipPositionX = $MOUSE.x < $MAP_WIDTH / 2 ? $MOUSE.x : $MOUSE.x - tooltipWidth;
 
-	// let dataReady = false;
-	let tooltipAvailable = true; // Set this to switch on/ff global tooltip
+	let tooltipAvailable = true; // Set this to switch on/off global tooltip
 	let tooltipVisible = false;
 	let tooltipHeight;
 	let tooltipWidth;
@@ -59,8 +57,6 @@
 	let hoveredCountry;
 
 	let scaleMin, scaleMax;
-
-	let lastUpdate;
 	let totalRefugees;
 
 	const projection = geoIdentity().reflectY(true);
@@ -73,7 +69,6 @@
 	const accentFill = 'rgba(246, 207, 1, 1)';
 
 	$: if ($dataReady) {
-		// console.log('Country data for map loaded');
 		projection.fitExtent(
 			[
 				[paddingMap, paddingMap],
@@ -83,8 +78,13 @@
 		);
 	}
 
+	// Proxy via SvelteKit route: src/routes/unhcr/+server.js
+	function proxied(url) {
+		return `/unhcr?url=${encodeURIComponent(url)}`;
+	}
+
 	async function fetchGeoData() {
-		const res = await fetch(`/data/geodata/europe-20m.json`)
+		await fetch(`/data/geodata/europe-20m.json`)
 			.then((response) => response.json())
 			.then(function (data) {
 				countriesAll = feature(data, data.objects.cntrg);
@@ -118,18 +118,12 @@
 					features: nBounds
 				};
 
-				// Extract Schengen countries
+				// Extract Schengen countries (kept for parity; not used elsewhere)
 				let schengenFiltered = countriesAll.features
-					.filter((item) => {
-						return item.properties.isSchengen;
-					})
-					.sort((a, b) => {
-						return a.properties.na.localeCompare(b.properties.na);
-					});
+					.filter((item) => item.properties.isSchengen)
+					.sort((a, b) => a.properties.na.localeCompare(b.properties.na));
 
-				let ukraineFeature = countriesAll.features.filter((c) => {
-					return c.properties.na == 'Ukraine';
-				});
+				let ukraineFeature = countriesAll.features.filter((c) => c.properties.na == 'Ukraine');
 
 				ukraine = {
 					type: 'FeatureCollection',
@@ -139,83 +133,109 @@
 	}
 
 	async function fetchAPI() {
-		let countryData =
+		const countryData =
 			'https://data2.unhcr.org/population/get/sublocation?widget_id=284342&sv_id=54&population_group=5459,5460&forcesublocation=0&fromDate=1900-01-01';
 
-		let aggregateData =
+		const aggregateData =
 			'https://data2.unhcr.org/population/?widget_id=294522&sv_id=54&population_group=5460';
 
-		// Use heroku server to proxy CORS-request
-		// let corsProxyUrl = 'https://floating-ocean-04956.herokuapp.com/'; Expired!
-		let corsProxyUrl = 'https://floating-ocean-04956.fly.dev/';
+		// --- Load country data (live UNHCR via /unhcr proxy) ---
+		try {
+			const response = await fetch(proxied(countryData));
+			if (!response.ok) throw new Error(`Country API HTTP ${response.status}`);
+			const dataRaw = await response.json();
 
-		// Load country data
-		const resCountry = await fetch(`${corsProxyUrl}${countryData}`)
-			.then((response) => response.json())
-			.then((dataRaw) => {
-				let data = dataRaw.data;
-				// Force strings to numbers
-				data.forEach(function (d) {
-					d['individuals'] = +d['individuals'];
-				});
+			let data = dataRaw?.data ?? [];
 
-				let extentArray = data.map((item) => {
-					return item.individuals;
-				});
+			// Force strings to numbers
+			data.forEach((d) => {
+				d['individuals'] = +d['individuals'];
+			});
 
-				csvData.set(data);
-				// Set color scale domain and range
+			const extentArray = data
+				.map((item) => item.individuals)
+				.filter((v) => Number.isFinite(v));
+
+			// IMPORTANT: always set store so mergeData never crashes
+			csvData.set(data);
+
+			// Set color scale domain and range (only if we have numbers)
+			if (extentArray.length) {
 				colorScale.domain(extentArray).range(schemeBlues[5]);
 				clusters = colorScale.clusters();
-
 				scaleMin = min(extentArray);
 				scaleMax = max(extentArray);
-			})
-			.catch((error) => console.error('error', error));
+			} else {
+				clusters = undefined;
+				scaleMin = undefined;
+				scaleMax = undefined;
+			}
+		} catch (error) {
+			console.error('UNHCR country fetch failed', error);
+			csvData.set([]); // keep app alive
+			clusters = undefined;
+			scaleMin = undefined;
+			scaleMax = undefined;
+		}
 
-		// Load aggregate data
-		const resAggregate = await fetch(`${corsProxyUrl}${aggregateData}`)
-			.then((response) => response.json())
-			.then((dataRaw) => {
-				let data = dataRaw.data;
-				// console.log(data);
+		// --- Load aggregate data (live UNHCR via /unhcr proxy) ---
+		try {
+			const response = await fetch(proxied(aggregateData));
+			if (!response.ok) throw new Error(`Aggregate API HTTP ${response.status}`);
+			const dataRaw = await response.json();
 
-				// Force strings to numbers
-				data.forEach(function (d) {
-					d['individuals'] = +d['individuals'];
-				});
+			let data = dataRaw?.data ?? [];
 
-				data = data[0];
+			// Force strings to numbers
+			data.forEach((d) => {
+				d['individuals'] = +d['individuals'];
+			});
 
-				$dataUpdated = data.date;
-				totalRefugees = data.individuals;
-			})
-			.catch((error) => console.error('error', error));
+			const first = data[0];
+			if (first) {
+				$dataUpdated = first.date;
+				totalRefugees = first.individuals;
+			} else {
+				totalRefugees = undefined;
+			}
+		} catch (error) {
+			console.error('UNHCR aggregate fetch failed', error);
+			totalRefugees = undefined;
+		}
 	}
 
 	function mergeData() {
+		// Ensure we never call reduce on undefined
+		const rows = Array.isArray($csvData) ? $csvData : [];
+
 		// Transform csv structure to object style to be better usable
-		let csvTransformed = $csvData.reduce(
+		let csvTransformed = rows.reduce(
 			(obj, item) => Object.assign(obj, { [item.geomaster_name]: item.individuals }),
 			{}
 		);
 
 		delete csvTransformed['Other European countries'];
 
-		// // Add values from csv
-		countriesAll.features.map((item) => {
-			item.value = csvTransformed[item.properties.na];
-		});
-		// console.log(csvTransformed);
-		// console.log(countriesAll);
+		// Add values from csv
+		if (countriesAll?.features?.length) {
+			countriesAll.features.forEach((item) => {
+				item.value = csvTransformed[item.properties.na];
+			});
+		}
+
+		// Render map even if API is down (then mostly grey)
 		$dataReady = true;
-		// test-commit
 	}
 
 	onMount(async () => {
-		await fetchGeoData();
-		await fetchAPI();
-		await mergeData();
+		try {
+			await fetchGeoData();
+			await fetchAPI();
+			mergeData();
+		} catch (e) {
+			console.error('Map init failed', e);
+			$dataReady = true;
+		}
 	});
 
 	function getFill(feature) {
@@ -243,10 +263,8 @@
 
 		let mouseX = e.pageX - divOffset.left;
 		let mouseY = e.pageY - divOffset.top;
-		// console.log(mouseX);
 
 		if (hoveredCountry) {
-			// console.log(hoveredCountry);
 			MOUSE.set({
 				x: mouseX,
 				y: mouseY,
@@ -269,15 +287,13 @@
 
 	$: handleMouseEnter = function (country) {
 		if (tooltipAvailable) {
-			let countryName = countryNames.filter((c) => {
-				return c.id == country.properties.id;
-			})[0].na;
+			let entry = countryNames.filter((c) => c.id == country.properties.id)[0];
+			let countryName = entry ? entry.na : country.properties.na;
 
-			// console.log(countryName);
 			hoveredCountry = {
 				name: countryName,
 				value: country.value,
-				valuePercent: country.value / totalRefugees
+				valuePercent: totalRefugees ? country.value / totalRefugees : undefined
 			};
 
 			if (country.properties.na || country.value) {
@@ -286,7 +302,7 @@
 		}
 	};
 
-	$: handleMouseLeave = function (country) {
+	$: handleMouseLeave = function () {
 		if (tooltipAvailable) {
 			tooltipVisible = false;
 		}
@@ -294,14 +310,13 @@
 
 	$: handleMouseOverUkraine = function (country) {
 		if (tooltipAvailable && totalRefugees) {
-			let countryName = countryNames.filter((c) => {
-				return c.id == country.properties.id;
-			})[0].na;
+			let entry = countryNames.filter((c) => c.id == country.properties.id)[0];
+			let countryName = entry ? entry.na : country.properties.na;
 
 			hoveredCountry = {
 				name: countryName,
 				value: totalRefugees,
-				valuePercent: totalRefugees / totalRefugees
+				valuePercent: 1
 			};
 
 			if (country.properties.na) {
@@ -313,7 +328,9 @@
 
 {#if $dataReady}
 	<div id="map" class="relative" on:mousemove={handleMouseMove} bind:clientHeight={$MAP_WIDTH}>
-		<Scale classes={schemeBlues[5]} {clusters} {scaleMin} {scaleMax} />
+		{#if clusters && scaleMin !== undefined && scaleMax !== undefined}
+			<Scale classes={schemeBlues[5]} {clusters} {scaleMin} {scaleMax} />
+		{/if}
 		<Legend {legend} />
 
 		<svg preserveAspectRatio="xMinYMid meet" class="" viewbox="0 0 {width} {height}">
@@ -361,14 +378,6 @@
 				/>
 			{/each}
 
-			<!-- {#each countryBoundaries.features as feature, index}
-				<path
-					d={path(feature)}
-					class={'boundary four boundary-' + feature.properties.name}
-					style="transform-origin: center; transform: scale(1.4, 1.4) translateX(-6%) translateY(-1%); stroke-width:0.5; opacity: 0.2;"
-				/>
-			{/each} -->
-
 			<!-- ukraine -->
 			{#each ukraine.features as feature, index}
 				<path d={path(feature)} class={'ukraine'} on:mouseover={handleMouseOverUkraine(feature)} />
@@ -388,7 +397,7 @@
 					<span>{tooltip.label1}</span>
 				</div>
 				<div class="relative-values">
-					{#if $MOUSE.tooltip.valuePercent !== 1}
+					{#if $MOUSE.tooltip.valuePercent !== 1 && $MOUSE.tooltip.valuePercent !== undefined}
 						<span>{tooltip.label2}</span>
 						<span class="font-bold">{formatPercent($MOUSE.tooltip.valuePercent)}</span>
 					{/if}
