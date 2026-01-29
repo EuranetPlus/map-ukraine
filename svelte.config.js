@@ -1,22 +1,17 @@
-import adapterStatic from '@sveltejs/adapter-static';
-import adapter from '@sveltejs/adapter-auto';
+import adapter from '@sveltejs/adapter-vercel';
 
 export default {
 	kit: {
+		// Use Vercel adapter so +server.js routes (e.g. /unhcr) work in production
 		adapter: adapter(),
-		// adapter: adapter({
-		// 	// default options are shown
-		// 	pages: 'build',
-		// 	assets: 'build',
-		// 	fallback: null,
-		// 	precompress: false
-		// }),
+
+		// Keep prerendering for pages as before (server routes are still available)
 		prerender: {
 			default: true
 		},
+
 		paths: {
 			// base: "/build"
-		},
-
+		}
 	}
 };
