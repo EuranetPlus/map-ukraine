@@ -10,7 +10,7 @@ export async function GET({ url, fetch }) {
   }
 
   // Allowlist (Sicherheit): nur UNHCR
-  if (!target.startsWith('https://data2.unhcr.org/')) {
+  if (!target.startsWith('https://data.unhcr.org/')) {
     return new Response(JSON.stringify({ error: 'Blocked host' }), {
       status: 403,
       headers: { 'content-type': 'application/json; charset=utf-8' }
