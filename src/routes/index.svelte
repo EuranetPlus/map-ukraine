@@ -119,7 +119,7 @@
 				<span class="font-bold">{textNoteDescription}: </span><span>{textNote}</span>
 			</div>
 			<div class="underline">
-				<a target="_blank" href="https://data2.unhcr.org/en/situations/ukraine">{textDataAccess}</a>
+				<a target="_blank" href="https://data.unhcr.org/en/situations/ukraine">{textDataAccess}</a>
 			</div>
 		</div>
 	{/if}
