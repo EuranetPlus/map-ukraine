@@ -78,10 +78,6 @@
 		);
 	}
 
-	// Proxy via SvelteKit route: src/routes/unhcr/+server.js
-	function proxied(url) {
-		return `/unhcr?url=${encodeURIComponent(url)}`;
-	}
 
 	async function fetchGeoData() {
 		await fetch(`/data/geodata/europe-20m.json`)
@@ -134,14 +130,14 @@
 
 	async function fetchAPI() {
 		const countryData =
-			'https://data2.unhcr.org/population/get/sublocation?widget_id=284342&sv_id=54&population_group=5459,5460&forcesublocation=0&fromDate=1900-01-01';
+			'https://data.unhcr.org/population/get/sublocation?widget_id=284342&sv_id=54&population_group=5459,5460&forcesublocation=0&fromDate=1900-01-01';
 
 		const aggregateData =
-			'https://data2.unhcr.org/population/?widget_id=294522&sv_id=54&population_group=5460';
+			'https://data.unhcr.org/population/?widget_id=294522&sv_id=54&population_group=5460';
 
 		// --- Load country data (live UNHCR via /unhcr proxy) ---
 		try {
-			const response = await fetch(proxied(countryData));
+			const response = await fetch(countryData);
 			if (!response.ok) throw new Error(`Country API HTTP ${response.status}`);
 			const dataRaw = await response.json();
 
@@ -180,7 +176,7 @@
 
 		// --- Load aggregate data (live UNHCR via /unhcr proxy) ---
 		try {
-			const response = await fetch(proxied(aggregateData));
+			const response = await fetch(aggregateData);
 			if (!response.ok) throw new Error(`Aggregate API HTTP ${response.status}`);
 			const dataRaw = await response.json();
 
