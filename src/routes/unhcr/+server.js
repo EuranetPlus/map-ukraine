@@ -13,7 +13,11 @@ export async function GET({ url, fetch }) {
   }
 
   // Sicherheitscheck: nur UNHCR erlauben
-  if (!['data.unhcr.org', 'data2.unhcr.org'].includes(target.hostname)) {
+ if (target.hostname === 'data2.unhcr.org') {
+    target.hostname = 'data.unhcr.org';
+  }
+
+  if (target.hostname !== 'data.unhcr.org') {
     return new Response('Host not allowed', { status: 403 });
   }
 
